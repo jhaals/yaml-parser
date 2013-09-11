@@ -10,10 +10,8 @@ parser = YamlParser.new
 files = parser.get_files(ARGV[0])
 errors = parser.parse_files(files)
 
+puts "Parsed #{files.length} yaml files. #{errors.length} error(s) found"
 if errors.length != 0
-  puts "Scanned #{files.length} yaml files. #{errors.length} error(s) found"
   errors.each { |error| puts error }
   exit 1
-else
-  puts "Scanned #{files.length} yaml files. 0 errors found"
 end
