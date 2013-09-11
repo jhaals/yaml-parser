@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require_relative '../lib/yaml-parser.rb'
+
+if ARGV[0].nil?
+  puts 'Usage: yaml-parser [path]'
+  exit 1
+end
+
+parser = YamlParser.new
+files = parser.get_files(ARGV[0])
+errors = parser.parse_files(files)
+
+if errors.length != 0
+  puts "Scanned #{files.length} yaml files. #{errors.length} error(s) found"
+  errors.each { |error| puts error }
+  exit 1
+else
+  puts "Scanned #{files.length} yaml files. 0 errors found"
+end
