@@ -1,4 +1,6 @@
 # yaml-parser
+[![Build Status](https://travis-ci.org/JHaals/yaml-parser.png?branch=master)](https://travis-ci.org/JHaals/yaml-parser)
+
 Validates all files .yaml files in a directory three by parsing them.
 
 #### Installation
