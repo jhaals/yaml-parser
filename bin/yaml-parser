@@ -12,6 +12,6 @@ errors = parser.parse_files(files)
 
 puts "Parsed #{files.length} yaml files. #{errors.length} error(s) found"
 if errors.length != 0
-  errors.each { |error| puts error }
+  errors.each { |error| warn error }
   exit 1
 end
