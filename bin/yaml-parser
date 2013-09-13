@@ -7,8 +7,8 @@ if ARGV[0].nil?
 end
 
 parser = YamlParser.new
-files = parser.get_files(ARGV[0])
-errors = parser.parse_files(files)
+files = parser.get_files ARGV[0]
+errors = parser.parse_files files
 
 puts "Parsed #{files.length} yaml files. #{errors.length} error(s) found"
 if errors.length != 0

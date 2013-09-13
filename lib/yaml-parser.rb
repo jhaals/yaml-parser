@@ -16,7 +16,7 @@ class YamlParser
     root = Pathname(dir)
     Pathname(root).find do |path|
       unless path == root
-        files << path if path.file? and path.extname == '.yaml'
+        files << path if path.file? && path.extname == '.yaml'
       end
     end
     files
